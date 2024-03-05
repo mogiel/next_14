@@ -1,21 +1,17 @@
-import { ProductCoverImage, type ProductCoverImageProps } from '@/ui/atoms/ProductCoverImage';
+import { ProductCoverImage } from '@/ui/atoms/ProductCoverImage';
 import {
   ProductListItemDescription,
-  type ProductListItemDescriptionProps
 } from '@/ui/atoms/ProductListItemDescription';
 
 type Props = {
-  product: {
-    image: ProductCoverImageProps
-    description: ProductListItemDescriptionProps
-  }
+  product: Product,
 }
 
 export const ProductListItem = (props: Props) => {
   return <li>
     <article>
-      <ProductCoverImage {...props.product.image}/>
-      <ProductListItemDescription {...props.product.description}/>
+      <ProductCoverImage {...props.product}/>
+      <ProductListItemDescription product={props.product}/>
     </article>
   </li>;
 };
