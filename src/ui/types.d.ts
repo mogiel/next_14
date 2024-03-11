@@ -9,5 +9,8 @@ interface Product {
   imageSize?: {
     width: number,
     height: number
-  }
+  },
+  description: string,
 }
+
+

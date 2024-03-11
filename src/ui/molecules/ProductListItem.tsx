@@ -1,7 +1,6 @@
 import { ProductCoverImage } from '@/ui/atoms/ProductCoverImage';
-import {
-  ProductListItemDescription,
-} from '@/ui/atoms/ProductListItemDescription';
+import { ProductListItemDescription } from '@/ui/atoms/ProductListItemDescription';
+import Link from 'next/link';
 
 type Props = {
   product: Product,
@@ -9,9 +8,11 @@ type Props = {
 
 export const ProductListItem = (props: Props) => {
   return <li>
-    <article>
-      <ProductCoverImage {...props.product}/>
-      <ProductListItemDescription product={props.product}/>
-    </article>
+    <Link href={`/product/${props.product.id}`}>
+      <article>
+        <ProductCoverImage {...props.product}/>
+        <ProductListItemDescription product={props.product}/>
+      </article>
+    </Link>
   </li>;
 };
