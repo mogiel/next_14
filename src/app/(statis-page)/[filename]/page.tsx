@@ -1,7 +1,7 @@
 'use client';
 
-import { PageError } from '@/ui/page/page404';
 import { type ComponentType } from 'react';
+import { PageError } from '@/ui/page/page404';
 
 export default async function StaticPage({ params }: { params: { filename: string } }) {
   try {

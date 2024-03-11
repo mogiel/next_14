@@ -1,6 +1,6 @@
+import { type Metadata } from 'next';
 import { getProductById } from '@/api/products';
 import { ProductListItem } from '@/ui/molecules/ProductListItem';
-import { type Metadata } from 'next';
 
 export const generateMetadata = async ({ params }: { params: { productId: string } }): Promise<Metadata> => {
   const product = await getProductById(params.productId);
