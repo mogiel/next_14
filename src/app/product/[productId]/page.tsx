@@ -2,11 +2,6 @@ import { getProductById } from '@/api/products';
 import { ProductListItem } from '@/ui/molecules/ProductListItem';
 import { type Metadata } from 'next';
 
-// export const metadata = {
-//   title: 'Products',
-//   description: 'List of products',
-// };
-
 export const generateMetadata = async ({ params }: { params: { productId: string } }): Promise<Metadata> => {
   const product = await getProductById(params.productId);
   return {
@@ -30,6 +25,7 @@ export default async function SingleProductPage({ params, searchParams }: {
   searchParams: { [key: string]: string | string [] }
 }) {
   const product = await getProductById(params.productId);
+  console.log(searchParams);
   return (<>
       <ProductListItem product={product}/>
     </>

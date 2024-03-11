@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { ProductCoverImage } from '@/ui/atoms/ProductCoverImage';
 import { ProductListItemDescription } from '@/ui/atoms/ProductListItemDescription';
-import Link from 'next/link';
 
 type Props = {
   product: Product,

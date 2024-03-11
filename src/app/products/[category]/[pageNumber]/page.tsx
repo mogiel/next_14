@@ -1,8 +1,4 @@
-export const generateStaticParams = async ({
-  params
-}: {
-  params: { category: string }
-}) => {
+export const generateStaticParams = async () => {
   return [{ pageNumber: '1' }, { pageNumber: '2' }];
 };
 export default function ({ params }: { params: { category: string, pageNumber: string, } }) {
