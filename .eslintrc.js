@@ -1,13 +1,13 @@
-{
-  "$schema": "https://json.schemastore.org/eslintrc.json",
-  "plugins": [
+module.exports = {
+  $schema: "https://json.schemastore.org/eslintrc.json",
+  plugins: [
     "@typescript-eslint",
     "import"
   ],
-  "parserOptions": {
-    "project": "tsconfig.json"
+  parserOptions: {
+    project: "tsconfig.json"
   },
-  "extends": [
+  extends: [
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/recommended",
@@ -15,7 +15,7 @@
     "prettier",
     "next/core-web-vitals"
   ],
-  "rules": {
+  rules: {
     // sort imports
     "import/order": "error",
     // no let exports
@@ -26,7 +26,7 @@
     "@typescript-eslint/ban-types": [
       "error",
       {
-        "types": {
+        types: {
           "{}": false
         }
       }
@@ -34,9 +34,9 @@
     "@typescript-eslint/consistent-type-imports": [
       "error",
       {
-        "prefer": "type-imports",
-        "fixStyle": "inline-type-imports",
-        "disallowTypeAnnotations": false
+        prefer: "type-imports",
+        fixStyle: "inline-type-imports",
+        disallowTypeAnnotations: false
       }
     ],
     "import/no-duplicates": [
@@ -65,45 +65,45 @@
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_"
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_"
       }
     ],
     // numbers and booleans are fine in template strings
     "@typescript-eslint/restrict-template-expressions": [
       "error",
       {
-        "allowNumber": true,
-        "allowBoolean": true
+        allowNumber: true,
+        allowBoolean: true
       }
     ],
     "@typescript-eslint/no-misused-promises": [
       "error",
       {
-        "checksVoidReturn": false
+        checksVoidReturn: false
       }
     ],
     "no-restricted-imports": [
       "error",
       {
-        "name": "next/router",
-        "message": "Please use next/navigation instead."
+        name: "next/router",
+        message: "Please use next/navigation instead."
       }
     ]
   },
-  "overrides": [
+  overrides: [
     {
-      "files": [
+      files: [
         "src/app/**/*.ts?(x)",
         "middleware.ts"
       ],
-      "rules": {
+      rules: {
         "import/no-default-export": "off"
       }
     }
   ],
-  "ignorePatterns": [
+  ignorePatterns: [
     "*.js",
     "*.jsx"
   ]
-}
+};
